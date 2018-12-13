@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+#pragma once
 #include "DisplayMessageEndpoint.h"
 #include <random>
 #include <sstream>
@@ -44,7 +46,7 @@ int DisplayMessageEndpoint::RandomizeDestination()
 	int sum = 0;
 	for (int i = 0; i < destinations.size(); i++)
 		sum += max - i;
-	int rand = GetRandom(0,sum);
+	int rand = GetRandom(0,sum-1);
 	sum = 0;
 	for (int i = 0; i < destinations.size(); i++)
 	{
@@ -56,7 +58,7 @@ int DisplayMessageEndpoint::RandomizeDestination()
 
 std::string DisplayMessageDestinationService::GetDestinationName(int id)
 {
-	Sleep(3000);
+	Sleep(1000);
 	return destinations[id];
 }
 

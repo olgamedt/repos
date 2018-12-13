@@ -4,7 +4,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-
 typedef struct Node
 {
 	int id;
@@ -19,4 +18,7 @@ typedef struct LinkedList
 }LinkedList;
 
 char* getDestination(LinkedList *List, int id);
-Node* createNode(int id, char* txt)
+Node* createNode(int id, char* txt);
+void AddNewNode(LinkedList *List, int id, char *txt);
+void RemoveLastNode(LinkedList *List);
+void newLRU(LinkedList *List, Node *RecentlyUsed, Node *BeforeRecenlyUsed);
